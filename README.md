@@ -5,6 +5,20 @@ Desgin an api For
 
 1 : Create User
 POST/users
+body :
+{
+  "name": "Surajit Mandal",
+  "email": "surajit@gmail.com",
+  "password": "password123",
+  "address": {
+    "street": "3/D Panchanan Tala",
+    "city": "Rishra",
+    "state": "West Bengal",
+    "zip": "712248"
+  },
+  "phone": "891010493"
+}
+
 
 2: Get All Users
 GET/users
@@ -13,22 +27,43 @@ GET/users
 GET/users/{user_id}
 
 4. Update User Profile
-PUT /users/{user_id}
+PATCH /users/{user_id}
+   body :
+   {
+  "name": "Arun Mandal",
+   user_id:1 }
 
-5. Get All Products
+6. Get All Products
 GET/products
 
-6. Get Specific Product
+7. Get Specific Product
 GET/products/{product_id}
 
-7. Add Product to Cart
+8. Add Product to Cart
 POST/cart
+{
+  "user_id": "1",
+  "product_id": "1",
+  "product_name": "Potato",
+  "quantity": 1
+}
 
-8. Remove Product from Cart
+9. Remove Product from Cart
 DELETE/cart
 
-9. Create an Order
+10. Create an Order
 POST/orders
+body :
+{
+order_name:
+order_no:
+user_id:
+}
 
-10. Cancel an Order
-PUT /orders/{order_id}/cancel
+12. Cancel an Order
+DELETE/orders
+body :
+{
+ "order_id": "1001",
+}
+
